@@ -1,5 +1,5 @@
 const MAX_OPERANDE = 10;
-const TEMPS_TIMER = 2*5;
+const TEMPS_TIMER = 1*60;
 
 let reponseEl = document.querySelector(".reponse");
 let operandesEl = document.querySelector(".question");
