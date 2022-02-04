@@ -12,7 +12,7 @@ function newOperation() {
   let op2 = Math.floor(Math.random() * MAX_OPERANDE); 
   res = op1*op2;
 
-  operandesEl.innerText = "Combien font " + op1 + " * " + op2 + " ?";
+  operandesEl.innerText = "Combien font " + op1 + " × " + op2 + " ?";
 }
 
 let timer = TEMPS_TIMER;
