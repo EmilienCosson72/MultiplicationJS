@@ -1,9 +1,10 @@
-const MAX_OPERANDE = 12;
-const TEMPS_TIMER = 5*60;
+const MAX_OPERANDE = 10;
+const TEMPS_TIMER = 2*5;
 
 let reponseEl = document.querySelector(".reponse");
 let operandesEl = document.querySelector(".question");
 let timerEl = document.querySelector(".timer");
+let counterEl = document.querySelector(".counter");
 let res;
 
 function newOperation() {
@@ -15,6 +16,7 @@ function newOperation() {
 }
 
 let timer = TEMPS_TIMER;
+let counter = 0;
 
 newOperation();
 reponseEl.focus();
@@ -25,12 +27,14 @@ reponseEl.addEventListener("keydown", (e) => {
 
   e.preventDefault();
 
-  if (timer < 0)
+  if (timer <= 0)
     return;
 
   if (res == reponseEl.innerText) {
       newOperation();
       console.log("OK");
+      counter++;
+      counterEl.innerText = counter;
   } else
       console.log("NON");
 
@@ -43,10 +47,16 @@ reponseEl.addEventListener("blur", (e) => {
   }, 1);
 });
 
-setInterval(() => {
+let intervalle = setInterval(() => {
     timer--;
-    if (timer < 0)
+    if (timer <= 0) {
         window.alert("Terminé !");
+        clearInterval(intervalle);
+        operandesEl.innerText = "Terminé !";
+        reponseEl.innerText = counter + " bonnes réponses";
+        reponseEl.setAttribute("contenteditable", false);
+    }
     
     timerEl.innerText = timer;
 }, 1000);
+
