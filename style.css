@@ -25,6 +25,12 @@ body {
     caret-color: transparent;
 }
 
-.timer, .counter {
-    margin: 1em 0 0 3em;
+.timer {
+    margin: 2em 0 1.5em;
+}
+
+img {
+    margin: 0 0.5em 0 3em;
+    width: 1.5em;
+    float: left;
 }

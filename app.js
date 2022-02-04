@@ -1,5 +1,5 @@
 const MAX_OPERANDE = 10;
-const TEMPS_TIMER = 1*60;
+const TEMPS_TIMER = 0.25*60;
 
 let reponseEl = document.querySelector(".reponse");
 let operandesEl = document.querySelector(".question");
@@ -22,7 +22,7 @@ newOperation();
 reponseEl.focus();
 
 reponseEl.addEventListener("keydown", (e) => {
-  if (e.keyCode != 13)
+  if ([96, 97, 98, 99, 100, 101, 102, 103, 104, 105].includes(e.keyCode))
       return;
 
   e.preventDefault();
@@ -50,7 +50,6 @@ reponseEl.addEventListener("blur", (e) => {
 let intervalle = setInterval(() => {
     timer--;
     if (timer <= 0) {
-        window.alert("Terminé !");
         clearInterval(intervalle);
         operandesEl.innerText = "Terminé !";
         reponseEl.innerText = counter + " bonnes réponses";
