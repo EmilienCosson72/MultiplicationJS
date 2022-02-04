@@ -1,5 +1,5 @@
 const MAX_OPERANDE = 10;
-const TEMPS_TIMER = 0.25*60;
+const TEMPS_TIMER = 3*60;
 
 let reponseEl = document.querySelector(".reponse");
 let operandesEl = document.querySelector(".question");
@@ -8,8 +8,8 @@ let counterEl = document.querySelector(".counter");
 let res;
 
 function newOperation() {
-  let op1 = Math.floor(Math.random() * MAX_OPERANDE+1); 
-  let op2 = Math.floor(Math.random() * MAX_OPERANDE+1); 
+  let op1 = Math.floor(Math.random() * MAX_OPERANDE); 
+  let op2 = Math.floor(Math.random() * MAX_OPERANDE); 
   res = op1*op2;
 
   operandesEl.innerText = "Combien font " + op1 + " * " + op2 + " ?";
