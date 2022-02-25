@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(to right, #424246, #515155);
+    background: linear-gradient(to right, #888 0%, #999 100%);
     font-size: 1.5em;
 }
 
@@ -9,21 +9,25 @@ body {
 
 .question {
     text-align: center;
-    margin: 12.5vh 0 5vh;
+    margin: 12.5vh 0 1vh;
     font-size: 1.25em
 }
 
 .reponse {
     border-radius: 2em;
-    border: 2px dotted #444;
     display: block;
     text-align: center;
     vertical-align: middle;
     padding: 0.75em 0;
-    width: 8em;
+    min-width: 8em;
     font-size: 2em;
+}
+
+.reponse p {
+    width: fit-content;
     outline: none;
-    caret-color: transparent;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .timer {
