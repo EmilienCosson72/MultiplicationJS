@@ -1,7 +1,7 @@
 const MAX_OPERANDE = 10;
 const TEMPS_TIMER = 3*60;
 
-let reponseEl = document.querySelector(".reponse");
+let reponseEl = document.querySelector(".reponse p");
 let operandesEl = document.querySelector(".question");
 let timerEl = document.querySelector(".timer");
 let counterEl = document.querySelector(".counter");
